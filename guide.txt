@@ -1,0 +1,102 @@
+If you want to start from scratch, follow these steps to set up your Flask project properly:
+
+1. Delete Existing Files
+	1.	Navigate to the directory where your project and virtual environment were located.
+	2.	Delete the entire project folder, including the flask_env virtual environment:
+
+rm -rf /path/to/flask_env
+rm -rf /path/to/my_flask_project
+
+2. Set Up a New Flask Project
+
+Follow these steps to start from scratch.
+
+Step 1: Create a Virtual Environment
+	1.	Navigate to a parent folder where you want to create the new project:
+
+cd ~/Projects
+
+
+	2.	Create a virtual environment:
+
+python3 -m venv flask_env
+
+
+	3.	Activate the virtual environment:
+
+source flask_env/bin/activate
+
+
+	4.	Install Flask:
+
+pip install flask
+
+Step 2: Set Up the Project Directory
+	1.	Create a folder for your Flask project:
+
+mkdir my_flask_project
+cd my_flask_project
+
+
+	2.	Create the app.py file:
+
+touch app.py
+
+
+	3.	Add this simple Flask app code to app.py:
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello, Flask!"
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+Step 3: Run the Flask App
+	1.	Ensure your virtual environment is activated:
+
+source ../flask_env/bin/activate
+
+
+	2.	Run the Flask app:
+
+python app.py
+
+
+	3.	Open your browser and go to:
+
+http://127.0.0.1:5000/
+
+3. Set Up Git (Optional)
+
+If you want to version-control your project and push it to GitHub:
+	1.	Initialize a Git repository:
+
+cd ~/Projects/my_flask_project
+git init
+
+
+	2.	Create a .gitignore file to ignore the virtual environment:
+
+echo "flask_env/" > .gitignore
+git add .gitignore
+git commit -m "Add .gitignore"
+
+
+	3.	Add your project files:
+
+git add .
+git commit -m "Initial commit"
+
+
+	4.	Create a GitHub repository and push your code:
+
+git remote add origin https://github.com/your-username/my_flask_project.git
+git branch -M main
+git push -u origin main
+
+Let me know if you need further clarification or assistance!
